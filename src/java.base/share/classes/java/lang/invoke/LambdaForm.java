@@ -1304,7 +1304,8 @@ class LambdaForm {
         }
         Name(MethodType functionType, Object... arguments) {
             this(new NamedFunction(functionType), arguments);
-            assert(arguments[0] instanceof Name name && name.type == L_TYPE);
+            assert(arguments[0] instanceof Name);
+            assert(((Name)arguments[0]).type == L_TYPE);
         }
         Name(MemberName function, Object... arguments) {
             this(new NamedFunction(function), arguments);
